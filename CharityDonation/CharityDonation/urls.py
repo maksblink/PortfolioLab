@@ -20,6 +20,7 @@ from main_app.views import LandingPage, AddDonation, Login, Register
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+    re_path(r'^$', LandingPage.as_view(), name="LandingPage"),
     re_path(r'^LandingPage$', LandingPage.as_view(), name="LandingPage"),
     re_path(r'^AddDonation$', AddDonation.as_view(), name="AddDonation"),
     re_path(r'^Login$', Login.as_view(), name="Login"),
