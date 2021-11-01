@@ -1,4 +1,4 @@
-from django.contrib.auth import get_user_model, authenticate, login
+from django.contrib.auth import get_user_model, authenticate, login, logout
 from django.db import IntegrityError
 from django.shortcuts import render, redirect
 from django.views import View
@@ -34,12 +34,12 @@ class Login(View):
 
     def post(self, request):
         # if User.objects.fileter()
-            user = authenticate(username=request.POST.get('email'), password=request.POST.get('password'))
-            if user:
-                login(request, user)
-                return redirect('/')
-            else:
-                return redirect('/Register')
+        user = authenticate(username=request.POST.get('email'), password=request.POST.get('password'))
+        if user:
+            login(request, user)
+            return redirect('/')
+        else:
+            return redirect('/Register')
 
 
 class Register(View):
@@ -62,3 +62,9 @@ class Register(View):
         except ValueError:
             return render(request, "main_app/register.html", {'error': 'You must complete all the fields.'})
         return redirect('/Login')
+
+
+class Logout(View):
+    def get(self, request):
+        logout(request)
+        return redirect('/')

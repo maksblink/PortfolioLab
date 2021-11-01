@@ -16,7 +16,7 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path, re_path
 
-from main_app.views import LandingPage, AddDonation, Login, Register
+from main_app.views import LandingPage, AddDonation, Login, Register, Logout
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -25,4 +25,5 @@ urlpatterns = [
     re_path(r'^AddDonation$', AddDonation.as_view(), name="AddDonation"),
     re_path(r'^Login$', Login.as_view(), name="Login"),
     re_path(r'^Register$', Register.as_view(), name="Register"),
+    re_path(r'^Logout', Logout.as_view(), name="Logout"),
 ]
