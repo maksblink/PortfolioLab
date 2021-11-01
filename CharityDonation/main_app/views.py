@@ -16,11 +16,11 @@ class LandingPage(View):
             bags += donation.quantity
         foundations = Institution.objects.filter(type='fundacja')
         organizations = Institution.objects.filter(type='organizacja pozarządowa')
-        local_collection = Institution.objects.filter(type='zbiórka lokalna')
-        counter = foundations.count() + organizations.count() + local_collection.count()
+        local_collections = Institution.objects.filter(type='zbiórka lokalna')
+        counter = foundations.count() + organizations.count() + local_collections.count()
         return render(request, "main_app/index.html",
                       {'bags': bags, 'foundations': foundations, 'organizations': organizations,
-                       'local_collection': local_collection, 'counter': counter})
+                       'local_collections': local_collections, 'counter': counter})
 
 
 class AddDonation(View):
@@ -33,12 +33,13 @@ class Login(View):
         return render(request, "main_app/login.html")
 
     def post(self, request):
-        user = authenticate(username=request.POST.get('email'), password=request.POST.get('password'))
-        if user:
-            login(request, user)
-            return redirect('/')
-        else:
-            return redirect('/Register')
+        # if User.objects.fileter()
+            user = authenticate(username=request.POST.get('email'), password=request.POST.get('password'))
+            if user:
+                login(request, user)
+                return redirect('/')
+            else:
+                return redirect('/Register')
 
 
 class Register(View):
