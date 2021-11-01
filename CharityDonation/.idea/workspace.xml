@@ -3,7 +3,11 @@
   <component name="ChangeListManager">
     <list default="true" id="fc757505-e285-411e-9f8b-247567dc2dba" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main_app/templates/main_app/base.html" beforeDir="false" afterPath="$PROJECT_DIR$/main_app/templates/main_app/base.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main_app/templates/main_app/form.html" beforeDir="false" afterPath="$PROJECT_DIR$/main_app/templates/main_app/form.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/main_app/templates/main_app/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/main_app/templates/main_app/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main_app/templates/main_app/login.html" beforeDir="false" afterPath="$PROJECT_DIR$/main_app/templates/main_app/login.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main_app/templates/main_app/register.html" beforeDir="false" afterPath="$PROJECT_DIR$/main_app/templates/main_app/register.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/main_app/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/main_app/views.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -46,7 +50,7 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../../final_Project/final_project/final_project_django" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../../blok2/workshop/fb_but_better" />
     <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
   </component>
   <component name="RecentsManager">
