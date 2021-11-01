@@ -10,8 +10,13 @@ class LandingPage(View):
         bags = 0
         for donation in donations:
             bags += donation.quantity
-        organizations = Institution.objects.count()
-        return render(request, "main_app/index.html", {'bags': bags, 'organizations': organizations})
+        foundations = Institution.objects.filter(type='fundacja')
+        organizations = Institution.objects.filter(type='organizacja pozarządowa')
+        local_collection = Institution.objects.filter(type='zbiórka lokalna')
+        counter = foundations.count() + organizations.count() + local_collection.count()
+        return render(request, "main_app/index.html",
+                      {'bags': bags, 'foundations': foundations, 'organizations': organizations,
+                       'local_collection': local_collection, 'counter': counter})
 
 
 class AddDonation(View):

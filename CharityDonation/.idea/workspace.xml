@@ -3,11 +3,8 @@
   <component name="ChangeListManager">
     <list default="true" id="fc757505-e285-411e-9f8b-247567dc2dba" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/main_app/templates/main_app/form-confirmation.html" beforeDir="false" afterPath="$PROJECT_DIR$/main_app/templates/main_app/form-confirmation.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/main_app/templates/main_app/form.html" beforeDir="false" afterPath="$PROJECT_DIR$/main_app/templates/main_app/form.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/main_app/templates/main_app/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/main_app/templates/main_app/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/main_app/templates/main_app/login.html" beforeDir="false" afterPath="$PROJECT_DIR$/main_app/templates/main_app/login.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/main_app/templates/main_app/register.html" beforeDir="false" afterPath="$PROJECT_DIR$/main_app/templates/main_app/register.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main_app/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/main_app/views.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
