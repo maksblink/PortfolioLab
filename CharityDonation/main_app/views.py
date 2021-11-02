@@ -3,7 +3,7 @@ from django.db import IntegrityError
 from django.shortcuts import render, redirect
 from django.views import View
 
-from main_app.models import Donation, Institution
+from main_app.models import Donation, Institution, Category
 
 User = get_user_model()
 
@@ -12,6 +12,16 @@ class LandingPage(View):
     def get(self, request):
         donations = Donation.objects.all()
         bags = 0
+
+        # new_organisation = Institution.objects.create(name="zbrojownia", description="fajne_kule")
+        # new_category = Category.objects.create(name="bron")
+        # new_organisation.category.add(new_category)
+        # new_organisation.save()
+        # new_organisation = Institution.objects.create(name="miekki_sklep", description="mieeko to jest")
+        # new_category = Category.objects.create(name="poduszka")
+        # new_organisation.category.add(new_category)
+        # new_organisation.save()
+
         for donation in donations:
             bags += donation.quantity
         foundations = Institution.objects.filter(type='fundacja')
@@ -25,7 +35,12 @@ class LandingPage(View):
 
 class AddDonation(View):
     def get(self, request):
-        return render(request, "main_app/form.html")
+        if request.user.is_authenticated:
+            categories = Category.objects.all()
+            organizations = Institution.objects.all()
+            return render(request, "main_app/form.html", {'categories': categories, 'organizations': organizations})
+        else:
+            return redirect('/Login')
 
 
 class Login(View):
