@@ -98,7 +98,7 @@
                     {% endfor %}
 
                     <div class="form-group form-group--buttons">
-                        <button type="button" class="btn next-step">Dalej</button>
+                        <button type="button" class="btn next-step next-step1">Dalej</button>
                     </div>
                 </div>
 
@@ -149,10 +149,39 @@
 
                         const obj = JSON.parse(jason);
 
-                        console.log(obj.obj12.categories);
+                        const btn1 = document.querySelector('.next-step1');
 
-                        let category = document.querySelectorAll('.checkbox');
-                        console.log(category);
+                        btn1.addEventListener("click", (e) => {
+                            const chk = document.querySelectorAll("input[name='categories']");
+                            const category = [...chk].filter(el => el.checked);
+
+                            let tablica = []
+
+                            for (let i = 0; i < category.length; i++) {
+                                tablica.push(category[i].parentElement.lastElementChild.innerHTML)
+                            }
+
+                            console.log(obj);
+                            let odfiltrowane_instytucje = [];
+
+                            let obj_arrey = []
+
+                            for (let i in obj)
+                                obj_arrey.push([i, obj [i]]);
+
+                            console.log('obj_arrey');
+                            console.log(obj_arrey);
+
+                            for (let i in obj_arrey) {
+                                console.log(i.name)
+                                if (i.name in tablica) {
+                                    odfiltrowane_instytucje.push(i)
+                                }
+                            }
+
+                            console.log('odfiltrowane_instytucje');
+                            console.log(odfiltrowane_instytucje);
+                        })
 
                     </script>
 
