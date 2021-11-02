@@ -48,11 +48,15 @@ class Login(View):
         return render(request, "main_app/login.html")
 
     def post(self, request):
-        # if User.objects.fileter()
-        user = authenticate(username=request.POST.get('email'), password=request.POST.get('password'))
-        if user:
-            login(request, user)
-            return redirect('/')
+        email = request.POST.get("email")
+        password = request.POST.get("password")
+        if User.objects.filter(email=email):
+            user = authenticate(username=email, password=password)
+            if user:
+                login(request, user)
+                return redirect('/')
+            else:
+                return render(request, 'main_app/login.html')
         else:
             return redirect('/Register')
 
