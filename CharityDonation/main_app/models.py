@@ -3,8 +3,7 @@ from django.db import models
 
 
 class Category(models.Model):
-    name = models.CharField(max_length=64)
-    # name = models.CharField(max_length=64, unique=True)
+    name = models.CharField(max_length=64, unique=True)
 
 
 institution = [
@@ -14,8 +13,7 @@ institution = [
 
 
 class Institution(models.Model):
-    name = models.CharField(max_length=64)
-    # name = models.CharField(max_length=64, unique=True)
+    name = models.CharField(max_length=64, unique=True)
     description = models.CharField(max_length=128)
     type = models.CharField(choices=institution, max_length=23, default='fundacja')
     category = models.ManyToManyField(Category)
