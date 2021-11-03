@@ -161,7 +161,6 @@
                                 tablica.push(category[i].parentElement.lastElementChild.innerHTML)
                             }
 
-                            console.log(obj);
                             let odfiltrowane_instytucje = [];
 
                             let obj_arrey = []
@@ -169,20 +168,22 @@
                             for (let i in obj)
                                 obj_arrey.push([i, obj [i]]);
 
-                            console.log('obj_arrey');
-                            console.log(obj_arrey);
+                            let tablica_do_ifa = [];
 
                             for (let i in obj_arrey) {
-                                console.log(i.name)
-                                if (i.name in tablica) {
-                                    odfiltrowane_instytucje.push(i)
+
+                                obj_arrey[i][1]['categories'].forEach(e => {
+                                    tablica_do_ifa.push(tablica.includes(e))
+                                })
+
+                                if (tablica_do_ifa.includes(true)) {
+                                    odfiltrowane_instytucje.push(obj_arrey[i]);
                                 }
+                                tablica_do_ifa = [];
                             }
 
-                            console.log('odfiltrowane_instytucje');
                             console.log(odfiltrowane_instytucje);
                         })
-
                     </script>
 
 
@@ -190,6 +191,25 @@
 
 
                     <h3>Wybierz organizacje, której chcesz pomóc:</h3>
+
+
+                    {##}
+
+                    {% for something in somethings %}
+                        <div class="form-group form-group--checkbox">
+                            <label>
+                                <input type="radio" name="organization" value="old"/>
+                                <span class="checkbox radio"></span>
+                                <span class="description">
+                                <div class="title">{{ type }} “{{ name }}”</div>
+                                <div class="subtitle">Cel i misja: {{ description }}</div>
+                            </span>
+                            </label>
+                        </div>
+                    {% endfor %}
+
+                    {##}
+
 
                     <div class="form-group form-group--checkbox">
                         <label>
