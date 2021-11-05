@@ -17,8 +17,8 @@ class LandingPage(View):
         # new_category = Category.objects.create(name="bron")
         # new_organisation.category.add(new_category)
         # new_organisation.save()
-        # new_organisation = Institution.objects.create(name="miekki_sklep", description="mieeko to jest")
-        # new_category = Category.objects.create(name="poduszka")
+        # new_organisation = Institution.objects.create(name="organizacja przykładowa", description="przyklad")
+        # new_category = Category.objects.create(name="kat examp")
         # new_organisation.category.add(new_category)
         # new_organisation.save()
 
